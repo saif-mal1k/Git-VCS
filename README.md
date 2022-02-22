@@ -9,9 +9,14 @@ notes on version Controlling with git
 - **Blob** - The content of a file in the project.
 - **Git ID's** - commit_id is a "40 character hexadecimal string" also known as hash, checksum, SHA.
 
-💡 **tip: *Does git use SHA-1 or sha256?***
-<br/>_At its core, the Git version control system is a content addressable filesystem. It uses the SHA-1 hash function to name content. The length of a SHA1 hash is 160 bits or 20 bytes. In this application it is represented by 40 characters in hexadecimal form. SHA-1 was cracked by google reaserchers and is considered unsafe for storing passwords._
+<details>
+<summary> 💡 <b>tip: <em>Does git use SHA-1 or sha256?</em></b></summary>
+<p>
+	
+_At its core, the Git version control system is a content addressable filesystem. It uses the SHA-1 hash function to name content. The length of a SHA1 hash is 160 bits or 20 bytes. In this application it is represented by 40 characters in hexadecimal form. SHA-1 was cracked by google reaserchers and is considered unsafe for storing passwords._
 <br/>***you can use ``>> git hash-object filename`` command to generate SHA1 hash code for any file.***
+</p>
+</details>
 
 <br/>
 
@@ -22,7 +27,15 @@ notes on version Controlling with git
 
 <div align="center">
 <img width="600" src="images/git graph DAG example.png" alt="Git DAG exmple">
+<p>
+	
+***note:*** _out of 40 characters only first 7 characters can be used as commit ID to refer to a commit._
+</p>
 </div>
+
+- **branch** occurs when a commit has more than one child.
+- **merge** occurs when a commit has more than one parent.
+
 
 
 <br/>
@@ -139,7 +152,14 @@ _shows the graphical representation of all the commits made till now._
 
 ---
 
+master is the default name of the main branch in the repository.
+<div align="center">
+<img src="images/git status.jpeg" alt="example" width="600">
+</div>
+
 branch occurs when a commit has more than one child.
+
+
 
 merge occurs when a commit has more than one parent.
 
