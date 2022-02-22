@@ -3,10 +3,16 @@ notes on version Controlling with git
 
 
 ## Git Vocabulary
+***Git Objects:***
 - **commit object** - A small text file.
 - **Annotated tag** - A permanent reference to a specific commit.
 - **Tree** - Directories and file names in a project.
 - **Blob** - The content of a file in the project.
+
+_typically a user interacts with only commit and tag and let the ``Git`` deal with tree and blob._
+
+***important notes:***
+- remote -
 - **Git ID's** - commit_id is a "40 character hexadecimal string" also known as hash, checksum, SHA.
 
 <details>
@@ -35,7 +41,7 @@ _At its core, the Git version control system is a content addressable filesystem
 
 - **branch** occurs when a commit has more than one child.
 - **merge** occurs when a commit has more than one parent.
-
+- **``HEAD pointer``** points to the most recent commit on a branch.
 
 
 <br/>
@@ -48,39 +54,32 @@ _At its core, the Git version control system is a content addressable filesystem
 ```
 >> git init 
 ```
->_initializes git vcs in current directory_
+_initializes git vcs in current directory_
 
-***example:***
 ```
 >> git init myproject
 ```
->_creates a new folder named myproject and initializes git vcs in it._
+_creates a new folder named myproject and initializes git vcs in it._
 
 <br/>
 
 ## Clone a remote repository( from github ) :
-***syntax:***
-```
-git clone source destination
-```
+***syntax:*** ``>> git clone source destination``
 
-***example:***
 ```
 >> git clone https://github.com/LearnWebCode/welcome-to-git.git “welcome page”
 ```
->_clones the welcome-to-git project in directory named welcome page._
+_clones the welcome-to-git project in directory named welcome page._
 
-***example:***
 ```
 >> git clone https://github.com/awesome projectdir
 ```
->_clones the project named awesome in directory named projectdir._
+_clones the project named awesome in directory named projectdir._
 
-***example:***
 ```
 >> git clone https://github.com/awesome 
 ```
->_clones the project named awesome in directory named awesome._
+_clones the project named awesome in directory named awesome._
 
 
 <br/>
@@ -151,7 +150,65 @@ _shows the graphical representation of all the commits made till now._
 
 
 ---
+# push and pull with remote repository
 
+
+
+<br/>
+
+---
+
+## tagging commits / versions
+**tag is a reference/label attached to a specific commit.
+<br/>the tags are used to mark a time line in history, as v1.0,beta,v1.1 or some similiar names.**
+- they are of two types
+- Light Weight
+	- simple reference to a commit.
+- Annotated Tag
+	- A full git object that references a commit.
+	- Includes tag author name, tag date, tag message, the commit ID.
+
+```
+>> git tag 
+```
+_shows the list of all the tags in the repository, if present._
+
+```
+>> git tag tagname
+```
+_the commit that HEAD points to (i.e the most recent commit in current branch) will be tagged with the provided tag name._
+
+```
+>> git tag -a tagname -m "your message here" 
+```
+_-a denoted the tag is annoted basically annotted tags have message and big description as compared to light weight tag's (tags with out -a)_
+
+
+### adding tag to a past commit
+***syntax:*** ``>> git tag -a tagname <commit_SHA>``
+
+```
+>> git tag -a version1 a242f45
+```
+
+### pushing tags
+**note: *the ``>> git push`` command alone can not automatically transfer tags to the remote repository***
+- to transfer a single tag, use  ***``>> git push <remote> <tagname>``***.
+- to transfer all the tags, use ***``>> git push <remote> --tags``***.
+	
+
+### deleting a tag
+```
+>> git tag -d tagname 
+>> git tag --delete tagname 
+```
+_deletes the tag from your local repo , to delete the tag from global(github,or other hosting) use command <b> ``>> git push tag -d tagname`` </b> (-d is short for --delete)._
+
+
+<br/>
+	
+---
+# branching and merging
 master is the default name of the main branch in the repository.
 <div align="center">
 <img src="images/git status.jpeg" alt="example" width="600">
@@ -165,6 +222,12 @@ merge occurs when a commit has more than one parent.
 
 
 ???????????????????????????????
+
+
+
+
+
+
 
 
 
