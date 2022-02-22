@@ -7,24 +7,22 @@ notes on version Controlling with git
 - **Annotated tag** - A permanent reference to a specific commit.
 - **Tree** - Directories and file names in a project.
 - **Blob** - The content of a file in the project.
-- **Git ID's** - commit_id is known as SHA or SHA1 
+- **Git ID's** - commit_id is a "40 character hexadecimal string" also known as hash, checksum, SHA.
 
+💡 **tip: *Does git use SHA-1 or sha256?***
+<br/>_At its core, the Git version control system is a content addressable filesystem. It uses the SHA-1 hash function to name content. The length of a SHA1 hash is 160 bits or 20 bytes. In this application it is represented by 40 characters in hexadecimal form. SHA-1 was cracked by google reaserchers and is considered unsafe for storing passwords._
+<br/>***you can use ``>> git hash-object filename`` command to generate SHA1 hash code for any file.***
+
+<br/>
 
 ## Git Graph Model
-- git models the relationship of commits with a DAG.
+- git models the relationship of commits with a DAG (Directed Acyclic Graph).
 - the directed nature is implied by the vertical order of the commits, with most recent commit on top.
+- their is no circular loop in graph, all the commits ("child nodes") are directed from bottom to top.
 
 <div align="center">
 <img width="600" src="images/git graph DAG example.png" alt="Git DAG exmple">
 </div>
-
-
-branch occurs when a commit has more than one child.
-
-merge occurs when a commit has more than one parent.
-
-
-???????????????????????????????
 
 
 <br/>
@@ -141,6 +139,12 @@ _shows the graphical representation of all the commits made till now._
 
 ---
 
+branch occurs when a commit has more than one child.
+
+merge occurs when a commit has more than one parent.
+
+
+???????????????????????????????
 
 
 
