@@ -12,6 +12,9 @@ notes on version Controlling with git
 _typically a user interacts with only commit and tag and let the ``Git`` deal with tree and blob._
 
 ***important notes:***
+- Repository -
+- working tree -
+- Staging area -
 - remote -
 - **Git ID's** - commit_id is a "40 character hexadecimal string" also known as hash, checksum, SHA.
 
@@ -168,6 +171,8 @@ _shows the graphical representation of all the commits made till now._
 	- A full git object that references a commit.
 	- Includes tag author name, tag date, tag message, the commit ID.
 
+<br/>
+
 ```
 >> git tag 
 ```
@@ -183,6 +188,7 @@ _the commit that HEAD points to (i.e the most recent commit in current branch) w
 ```
 _-a denoted the tag is annoted basically annotted tags have message and big description as compared to light weight tag's (tags with out -a)_
 
+<br/>
 
 ### adding tag to a past commit
 ***syntax:*** ``>> git tag -a tagname <commit_SHA>``
@@ -191,11 +197,14 @@ _-a denoted the tag is annoted basically annotted tags have message and big desc
 >> git tag -a version1 a242f45
 ```
 
+<br/>
+
 ### pushing tags
 **note: *the ``>> git push`` command alone can not automatically transfer tags to the remote repository***
 - to transfer a single tag, use  ***``>> git push <remote> <tagname>``***.
 - to transfer all the tags, use ***``>> git push <remote> --tags``***.
 	
+<br/>
 
 ### deleting a tag
 ```
@@ -209,16 +218,161 @@ _deletes the tag from your local repo , to delete the tag from global(github,or 
 	
 ---
 # branching and merging
-master is the default name of the main branch in the repository.
+
+## branching
+branch occurs when a commit has more than one child. <a href="#git-graph-model"> see graph </a>
+
+_**benifits -**_
+- team members can isolate their work so that it don't impact others untill the work is ready.
+- this allows to experiment with changes to the project, while at the same time team retains a stable version of the project.
+- if you have an idea for a change, you can create a branch and test your idea. later you can merge it in production or throw out your branch.
+- branches allow to support multiple versions of the project simultaneously.
+
+_**branches can be -**_
+- ***Topic*** - A feature, a bug fix, a hotfix, a Configuration Change...
+- ***Long Lived*** - master, develop, relese...
+
+<div align="left">
+<img src="images/branching and merging.png" alt="example" width="450">
+</div>
+
+***master is the default name of the main branch in the repository.***
 <div align="center">
 <img src="images/git status.jpeg" alt="example" width="600">
 </div>
 
-branch occurs when a commit has more than one child.
+<br/>
+
+```
+>> git branch 
+```
+_list all the branches name, present in repository. the branch that has ``*`` in front of it is current active branch. for example, ``* main`` means main is active._
+
+```
+>> git branch branchName 
+```
+_it will create a new brach from the commit HEAD is pointing at, with the label(here branchName) you provided._
+
+**note:** git branch sidebar will create a branch named sidebar, to switch to the branch you just created you'll need another command ``>> git checkout branchName``.
+
+```
+>> git checkout -b branchname 
+```
+_this command allows to create and switch to a new branch all in one command._
+
+<br/>
+
+### starting a new branch from a previous commit
+```
+>> git branch branchName commit_SHA
+```
+_goes to commit with "commit_SHA" and start a new branch from there with branch label as the branchName._
+
+<br/>
+
+### checking out to another branch
+```
+>> git checkout branchname
+```
+_use this command to switch to the branch with branchName specified._
+
+***checkout command -***
+- makes the HEAD pointer point to the label of branch checked-out to.
+- updates the working tree with the files from the checked-out branch.
+
+<br/>
+
+### the Detached Head
+- A detached head reference points directly to a commit.
+***checking out to a commit leads to detached HEAD state, 
+<br/>you probably checkout to a commit to review "history/condition" during that commit, 
+<br/>you probably would have used something like ``>> git checkout A12BE17``.
+<br/>you will have to again checkout to the branch to make ``HEAD`` point to latest commit in branch.***
+<div align="left">
+<img src="images/detached HEAD.png" alt="detached HEAD example" width="400">
+</div>
+
+<br/>
+
+### deleting a branch
+```
+>> git branch -d nameofbranch
+```
+_branch labels are commonly deleted after a topic branch has been merged._
+<br/>_branches are used to do development or make a fix, after a branch's changes have been merged, you probably won't need the branch anymore. you can delete it using above command._
+
+<br/>
+
+
+### Dangling commit
+- if you try deleting a branch label with unmerged work, git will not let you do that it responds with ***``the branch is not fully merged``***.
+- however, you can force delete an unmerged branch using ``-D`` flag. for example **``>> git branch -D branchName``**.
+- if you delete branch with out merging, the commit's are left without a branch and are called dangling commits. Git will periodically garbage collect deleting older dangling commits.
+
+***what if you accidentally deleted a branch label?***
+- you can use the **``>> git reflog``** command.
+- git reflog returns a local list of recent HEAD commits. this list is in the local .git directory, but not in the repository. so this only works locally.
+- you can find the dangling commit in that list and start a branch again from the SHA of that commmit.
 
 
 
-merge occurs when a commit has more than one parent.
+<details>
+<summary><b><em> Que:  git switch branchName and git checkout branchName ?</em></b></summary>
+<p>
+	
+Did you forget to create a new branch, and made your changes in the wrong branch? use.
+```
+>>    git switch -c "new-branch"
+```
+</p>
+</details>	
+
+<br/>
+<br/>
+
+
+## merging
+- merge occurs when a commit has more than one parent. Merging combines the work of independent branches. 
+- Usually, this involves merging a topic branch, into a base branch, such as the master branch. 
+- The base branch is usually a longer running branch than the topic branch.
+
+***there are four types of merges:***
+- Fast-forward merge
+- Merge commit
+- Squash merge
+- Rebase
+
+### Fast-forward merge
+- moves the base branch label to the tip of the topic branch.
+<div align="left">
+<img src="images/fast-forward merge.png" alt="fast-forward merge" width=600>
+</div>
+
+- A fast forward merge is possible only if no other commits have been made to the base branch since the topic branch was created. 
+- If any commits have been added to the base branch, it will not allow you to perform a fast-forward merge.
+- by default git first tries the fast-forward merge when merging two branches.
+
+
+
+
+### performing a merge
+1. first checkout to master branch
+```
+>> git checkout master
+```
+
+2. use git merge commit, git attemps a fast forward merge by default. 
+```
+>> git merge branchName
+```
+
+3. delete the previous branch after it is merged
+
+```
+>> git branch -d branchName
+```
+
+
 
 
 ???????????????????????????????
