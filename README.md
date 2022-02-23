@@ -353,9 +353,7 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 - by default git first tries the fast-forward merge when merging two branches.
 
 
-
-
-### performing a merge
+### performing a Fast-forward merge
 1. first checkout to master branch
 ```
 >> git checkout master
@@ -373,6 +371,10 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 ```
 
 
+<br>
+
+### merge commit
+- 
 
 
 ???????????????????????????????
