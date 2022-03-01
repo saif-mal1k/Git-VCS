@@ -49,6 +49,12 @@ _At its core, the Git version control system is a content addressable filesystem
 
 <br/>
 
+## git workflow
+?????????????
+
+
+
+<br/>
 
 ---
 # working with git 
@@ -332,7 +338,7 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 
 
 ## merging
-- merge occurs when a commit has more than one parent. Merging combines the work of independent branches. 
+-emMerging combines the work of independent branches. 
 - Usually, this involves merging a topic branch, into a base branch, such as the master branch. 
 - The base branch is usually a longer running branch than the topic branch.
 
@@ -343,43 +349,79 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 - Rebase
 
 ### Fast-forward merge
-- moves the base branch label to the tip of the topic branch.
 <div align="left">
-<img src="images/fast-forward merge.png" alt="fast-forward merge" width=600>
+<a href="#"><img src="images/fast-forward merge.png" alt="fast-forward merge" width=600></a>
 </div>
 
+- moves the base branch label to the tip of the topic branch.
+- by default git first tries the fast-forward merge when merging two branches.
 - A fast forward merge is possible only if no other commits have been made to the base branch since the topic branch was created. 
 - If any commits have been added to the base branch, it will not allow you to perform a fast-forward merge.
-- by default git first tries the fast-forward merge when merging two branches.
+- the benifit of fast-forward merge is that <b>``no new commit``</b> is needed to merge the two branches.
+<details>
+<summary><b><em> performing a Fast-forward merge </em></b></summary>
+<p>
 
-
-### performing a Fast-forward merge
 1. first checkout to master branch
-```
->> git checkout master
-```
+<em>``>> git checkout master``</em>
 
-2. use git merge commit, git attemps a fast forward merge by default. 
-```
->> git merge branchName
-```
+2. use git merge, git attemps a fast forward merge by default. 
+<em>``>> git merge branchName``</em>
 
 3. delete the previous branch after it is merged
+<em>``>> git branch -d branchName``</em>
 
-```
->> git branch -d branchName
-```
+***note:*** _after a branch is merged its branch label can be deleted, this prevents a continuous increase in the number of merged branch labels as the project grows.
+<br/> Dealing with an ever increasing number of feature branch labels can be confusing. 
+<br/> whether or not you should delete the branch label's after a merge is a decision that your team should make.
+<br/> If you'd like to retain the knowledge of where the feature work occured, you can include this information in the feature's commit messages. Or you can add a tag that permanently marks the feature work.
+</p>	
+</details>
 
-
-<br>
+<br/>
 
 ### merge commit
-- 
+<div align="left">
+<a href="#"><img src="images/merge-commit.png" alt="merge commit" width=600></a>
+</div>
 
+- merge commit happens automatically, if two branches can't be merged in fast-forward fashion.
+- combines the commits at the tip of the branches to be merged and places the result into a <b>``new merge commit``</b>.
+<details>
+<summary><b><em> performing a merge commit </em></b></summary>
+<p>
 
-???????????????????????????????
+<em>1. ``>> git checkout master``</em>
 
+<em>2. ``>> git merge branchName``</em> ,accept or change commit message.
 
+<em>3. ``>> git branch -d branchName``</em>
+</p>
+</details>
+
+<br/>
+
+### force not to do fast-forward merge
+- one can force a merge commit even if fast-forward merge is possible.
+<div>
+<a href="#"><img src="images/force-merge-commit.png" alt="force merge commit"></a>
+</div>
+	
+<details>
+<summary><b><em> force a merge commit </em></b></summary>
+<p>
+
+<em>1. ``>> git checkout master``</em>
+
+<em>2. ``>> git merge`` <b>``--no-ff``</b> ``branchName``</em> ,accept or change commit message.
+	
+<em>3. ``>> git branch -d branchName``</em>
+</p>
+</details>
+
+<br/>
+
+***``squash merge``*** & ***``Rebase``***, they rewrite commit history.
 
 
 
