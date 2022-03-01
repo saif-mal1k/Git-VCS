@@ -338,7 +338,7 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 
 
 ## merging
--emMerging combines the work of independent branches. 
+- Merging combines the work of independent branches. 
 - Usually, this involves merging a topic branch, into a base branch, such as the master branch. 
 - The base branch is usually a longer running branch than the topic branch.
 
@@ -363,18 +363,21 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 <p>
 
 1. first checkout to master branch
+	
 <em>``>> git checkout master``</em>
 
 2. use git merge, git attemps a fast forward merge by default. 
+
 <em>``>> git merge branchName``</em>
 
 3. delete the previous branch after it is merged
+
 <em>``>> git branch -d branchName``</em>
 
 ***note:*** _after a branch is merged its branch label can be deleted, this prevents a continuous increase in the number of merged branch labels as the project grows.
 <br/> Dealing with an ever increasing number of feature branch labels can be confusing. 
 <br/> whether or not you should delete the branch label's after a merge is a decision that your team should make.
-<br/> If you'd like to retain the knowledge of where the feature work occured, you can include this information in the feature's commit messages. Or you can add a tag that permanently marks the feature work.
+<br/> If you'd like to retain the knowledge of where the feature work occured, you can include this information in the feature's commit messages. Or you can add a tag that permanently marks the feature work._
 </p>	
 </details>
 
@@ -404,7 +407,7 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 ### force not to do fast-forward merge
 - one can force a merge commit even if fast-forward merge is possible.
 <div>
-<a href="#"><img src="images/force-merge-commit.png" alt="force merge commit"></a>
+<a href="#"><img src="images/force-merge-commit.png" alt="force merge commit" width=600></a>
 </div>
 	
 <details>
@@ -421,10 +424,44 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 
 <br/>
 
+
 ***``squash merge``*** & ***``Rebase``***, they rewrite commit history.
 
 
+## Merge Conflicts
+- git automatically merges two changes if they don't overlap/override each other.
+<div>
+<a href="#"><img src="images/no-merge-conflict.png" alt="not a merge conflict" width=600></a>
+</div>
 
+- <b>A merge conflict arises when two separate branches</b>( _that we want to merge_ ) <b>have made edits</b>( _commit after changing_ ) <b>to the same line in a file.</b> 
+<div>
+<a href="#"><img src="images/merge-conflict.png" alt="merge conflict" width=600></a>
+</div>
+
+- during a merge conflict Git is unable to automatically resolve differences in code between two commits. 
+- when Merge conflict occurs <b>``git edits the files with conflict markers and place them in working tree.``</b> now a person needs to make decision, (which changes to keep).
+- fix, add and commit the conflicting files.
+
+<details>
+<summary><b><em> Resolving Merge Conflicts </em></b></summary>
+<p>
+
+<em>1. ``>> git checkout master``</em>
+
+<em>2. ``>> git merge branchName``</em> ,in case of conflict, <b>``Automatic merge failed; fix conflicts and then commit the result.``</b>
+	
+<em>3. <b>fix changes in file that is causing conflict</b></em>
+
+<em>4. <b>stage changes, and commit them</b></em>
+
+<em>5. ``>> git branch -d branchName``</em>
+</p>
+</details>
+
+<br/>
+
+---
 
 
 
