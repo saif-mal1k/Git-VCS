@@ -32,7 +32,7 @@ _At its core, the Git version control system is a content addressable filesystem
 
 ## <b><em> ``git workflow`` </em></b>
 <div align="center">
-<a href="#"><img src="images/git-workflow.png" alt="git workflow" width="90%"></a>
+<a href="#"><img src="images/git--workflow.png" alt="git workflow" width="90%"></a>
 </div>
 
 <br/>
