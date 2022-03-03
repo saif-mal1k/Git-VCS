@@ -29,6 +29,15 @@ _At its core, the Git version control system is a content addressable filesystem
 
 <br/>
 
+
+## <b><em> ``git workflow`` </em></b>
+<div align="center">
+<a href="#"><img src="images/git-workflow.png" alt="git workflow" width="90%"></a>
+</div>
+
+<br/>
+
+
 ## Git Graph Model
 - git models the relationship of commits with a DAG (Directed Acyclic Graph).
 - the directed nature is implied by the vertical order of the commits, with most recent commit on top.
@@ -49,12 +58,7 @@ _At its core, the Git version control system is a content addressable filesystem
 
 <br/>
 
-## git workflow
-?????????????
 
-
-
-<br/>
 
 ---
 # working with git 
