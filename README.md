@@ -32,7 +32,7 @@ _At its core, the Git version control system is a content addressable filesystem
 
 ## <b><em> ``git workflow`` </em></b>
 <div align="center">
-<a href="#"><img src="images/git--workflow.png" alt="git workflow" width="90%"></a>
+<a href="#"><img src="images/git-workflow.png" alt="git workflow" width="90%"></a>
 </div>
 
 <br/>
@@ -460,6 +460,10 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 </details>
 
 <br/>
+
+
+????????????????????????? what are merge stratergies and what is recursive stratergy ????????????????????
+
 
 ---
 ## Tracking Branches ?????
