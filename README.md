@@ -13,10 +13,10 @@ _typically a user interacts with only commit and tag and let the ``Git`` deal wi
 
 ***important notes:***
 - Repository -
-- working tree -
+- working dir -
 - Staging area -
 - remote -
-- **Git ID's** - commit_id is a "40 character hexadecimal string" also known as hash, checksum, SHA.
+- **Git ID's** - ***commit_Id*** is a "40 character hexadecimal string" also known as ***hash***, checksum, ***SHA*** / ***SHA1***.
 
 <details>
 <summary> 💡 <b>tip: <em>Does git use SHA-1 or sha256?</em></b></summary>
@@ -224,6 +224,7 @@ _deletes the tag from your local repo , to delete the tag from global(github,or 
 
 ## branching
 branch occurs when a commit has more than one child. <a href="#git-graph-model"> see graph </a>
+
 
 _**benifits -**_
 - team members can isolate their work so that it don't impact others untill the work is ready.
@@ -469,6 +470,11 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 ## Tracking Branches ?????
 - tracking branch is a local branch referencing to the remote branch.
 - tracking branch name start with <b>``<remote name>/<branch name>``</b>, ex: <b>``origin/master``</b>.
+
+<div align="center">
+<a href="#"><img src="images/branches.png" alt="tracking branch" width="85%"></a>
+</div>
+
 - if you clone a repository you'll have a default tracking branch
 - visible using flag <b>``--all``</b> in command ``>> git branch --all``.
 
