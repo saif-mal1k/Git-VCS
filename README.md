@@ -476,11 +476,38 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 <br/>
 
 
-????????????????????????? what are merge stratergies and what is recursive stratergy ????????????????????
+<details>
+<summary><b><em> what are merge stratergies and what is recursive stratergy ? </em></b></summary>
+<p>
+
+***Answer:***
+	
+1. If remote branch is ahead of local branch, 
+On git pull changes are fetched in tracking branch and merged into local branch using ***fast forward merge strategy.***
+<div align="center">
+<span>
+<a href="#"><img src="images/fast-forward-merge-graphic.png" width="700px"></a>
+</span>
+<span>
+<a href="#"><img src="images/fast-forward-merge.png" width="650px"></a>
+</span>
+</div>
+
+2. Initially remote branch is ahead of the local branch, then local branch commited some changes without fetching changes from remote branch, 
+after that local branch run git pull, here those changes will be merged using ***recursive strategy.***
+
+<div align="center">
+<a href="#"><img src="images/recursive-merge-graphic.png" width="650px"></a>
+</div>
+
+</p>
+</details>	
+	
+<br/>	
 
 
 ---
-## Tracking Branches ?????
+## Tracking Branches
 - tracking branch is a local branch referencing to the remote branch.
 - tracking branch name start with <b>``<remote name>/<branch name>``</b>, ex: <b>``origin/master``</b>.
 - if you clone a repository you'll have a default tracking branch
@@ -540,8 +567,8 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 
 ### fetch
 - retrieves new objects and references from the remote repository.
-- tracking branches are updated.
-- 
+- updates the tracking branches.
+- to reflect fetched changes into working dir and local branch, you'll have to merge tracking branch with local branch.
 
 
 ### pull
@@ -561,10 +588,9 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 <br/>
 
 <details>
-<summary><b><em> difference between fetch and pull ?</em></b></summary>
+<summary><b><em> difference between fetch and pull ? why fetch if we can pull?</em></b></summary>
 <p>
-
-***Answer:*** 
+***Answer:*** see <a href="#tracking-branches"> tracking branches </a>
 
 </p>
 </details>
