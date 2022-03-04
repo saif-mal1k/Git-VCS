@@ -467,6 +467,9 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 
 ---
 ## Tracking Branches ?????
+- tracking branch is a local branch referencing to the remote branch.
+- tracking branch name start with <b>``<remote name>/<branch name>``</b>, ex: <b>``origin/master``</b>.
+- if you clone a repository you'll have a default tracking branch
 - visible using flag <b>``--all``</b> in command ``>> git branch --all``.
 
 
@@ -474,7 +477,7 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 
 ----
 
-# fetch, push and pull
+# fetch, pull and push
 - **clone** - copies a remote repository.
 - **Fetch** - retrieves new objects and references from the remote repository.
 - **pull** - Fetches and merges commits locally.
