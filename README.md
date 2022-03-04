@@ -1,6 +1,19 @@
 # Git-VCS
-notes on version Controlling with git
+<div id="index" align="center">
 
+<!------------------------------index----------------------------------->
+***index***
+
+
+
+
+<br>
+
+</div>	
+	
+<br>
+
+<br>
 
 ## Git Vocabulary
 ***Git Objects:***
@@ -32,7 +45,7 @@ _At its core, the Git version control system is a content addressable filesystem
 
 ## <b><em> ``git workflow`` </em></b>
 <div align="center">
-<a href="#"><img src="images/git-workflow.png" alt="git workflow" width="90%"></a>
+<a href="#"><img src="images/git workflow.png" alt="git workflow" width="900px"></a>
 </div>
 
 <br/>
@@ -44,15 +57,15 @@ _At its core, the Git version control system is a content addressable filesystem
 - their is no circular loop in graph, all the commits ("child nodes") are directed from bottom to top.
 
 <div align="center">
-<img width="600" src="images/git graph DAG example.png" alt="Git DAG exmple">
+<a href="#"><img width="600" src="images/git graph DAG example.png" alt="Git DAG exmple"></a>
 <p>
 	
 ***note:*** _out of 40 characters only first 7 characters can be used as commit ID to refer to a commit._
 </p>
 </div>
 
-- **branch** occurs when a commit has more than one child.
-- **merge** occurs when a commit has more than one parent.
+- **branch** occurs when a commit has more than one child.	***ex:** look at commit_id 6068*
+- **merge** occurs when a commit has more than one parent.	***ex:** look at commit_id 4c58*
 - **``HEAD pointer``** points to the most recent commit on a branch.
 
 
@@ -242,7 +255,7 @@ _**branches can be -**_
 
 ***master is the default name of the main branch in the repository.***
 <div align="center">
-<img src="images/git status.jpeg" alt="example" width="600">
+<a href="#"><img src="images/git status.jpeg" alt="example" width="600"></a>
 </div>
 
 <br/>
@@ -293,7 +306,7 @@ _use this command to switch to the branch with branchName specified._
 <br/>you probably would have used something like ``>> git checkout A12BE17``.
 <br/>you will have to again checkout to the branch to make ``HEAD`` point to latest commit in branch.***
 <div align="left">
-<img src="images/detached HEAD.png" alt="detached HEAD example" width="400">
+<a href="#"><img src="images/detached HEAD.png" alt="detached HEAD example" width="400"></a>
 </div>
 
 <br/>
@@ -470,15 +483,50 @@ Did you forget to create a new branch, and made your changes in the wrong branch
 ## Tracking Branches ?????
 - tracking branch is a local branch referencing to the remote branch.
 - tracking branch name start with <b>``<remote name>/<branch name>``</b>, ex: <b>``origin/master``</b>.
-
-<div align="center">
-<a href="#"><img src="images/branches.png" alt="tracking branch" width="85%"></a>
-</div>
-
 - if you clone a repository you'll have a default tracking branch
+	
+<div align="center">
+<a href="#"><img src="images/branches.png" alt="tracking branch" width="750px"></a>
+</div>
+	
 - visible using flag <b>``--all``</b> in command ``>> git branch --all``.
 
+<div align="center">
+<a href="#"><img src="images/git-branch-all.png" alt="git branch all command" width="550px"></a>
 
+**fig:** _there is only one remote branch ie. main and HEAD(tracking branch pointer) is pointing to that._
+</div>
+	
+- to view commits on default remote tracking branch, use <b>``origin``</b> in command ``>> git log``<b>``origin``</b>``--oneline``.
+
+<div align="center">
+<a href="#"><img src="images/_.png" alt="commits on tracking branch" width="550px"></a>
+</div>
+	
+- to change the default remote tracking branch, use ``>> git remote set-head <remote> <branch>``.
+
+<div align="center">
+<a href="#"><img src="images/changing-default-remote-tracking-branch.png" alt="changing default remote tracking branch" width="500px"></a>
+
+**fig:** _there are 2 remote branches ``master``, ``develop``. initially default was set to ``master``, now HEAD is set to reference ``develop`` branch_
+</div>
+
+- verfying if we are insync(upto date) with tracking branch.
+<div align="center">
+<a href="#"><img src="images/git-status1.png" alt="commits on tracking branch" width="550px"></a>
+	
+**fig:** _if you just used git pull your local branch will automatically be insync with remote branch._
+</div>
+	
+<div align="center">
+<a href="#"><img src="images/git-status2.png" alt="commits on tracking branch" width="550px"></a>
+
+**fig:** _if you have commited locally but not yet pushed to remote branch._
+</div>
+
+**Note:** _<b>``>> git log --all``</b> gives the logs of all the local and tracking branches._
+	
+	
 <br/>
 
 ----
