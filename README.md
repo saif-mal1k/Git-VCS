@@ -567,7 +567,7 @@ after that local branch run git pull, here those changes will be merged using **
 
 ### fetch
 - retrieves new objects and references from the remote repository.
-- updates the tracking branches.
+- updates the tracking branches only.
 - to reflect fetched changes into working dir and local branch, you'll have to merge tracking branch with local branch.
 
 
@@ -595,11 +595,10 @@ after that local branch run git pull, here those changes will be merged using **
 
 
 ### push
-- ``>> git push <repository> <branch>
-
-
-
-
+- to push changes from local branch into remote branch, use ``>> git push``.
+- initially you have to use ``>> git push [-u] <repository> <branch>`` to set up default remote branch to push to. ``-u`` means (--set-upstream).
+- ex:``>> git push -u origin master`` , after setting up upstream you can just use ``>> git push`` and it will always push to remote branch you set for upstream.
+- alternatively you can specify which branch to push to. ex:``>> git push origin develop``.
 
 
 <br/>
