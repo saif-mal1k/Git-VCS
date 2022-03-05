@@ -581,22 +581,28 @@ after that local branch run git pull, here those changes will be merged using **
 	- <b>``--ff-only``</b> - cancel instead of doing a merge commit.
 	- <b>``--rebase``</b> - ??????????????????????????????
 
-
-
-
-
 <br/>
 
 <details>
 <summary><b><em> difference between fetch and pull ? why fetch if we can pull?</em></b></summary>
 <p>
+	
 ***Answer:*** see <a href="#tracking-branches"> tracking branches </a>
-
 </p>
 </details>
 
 <br/>
 
+
+### push
+- ``>> git push <repository> <branch>
+
+
+
+
+
+
+<br/>
 ---
 
 
