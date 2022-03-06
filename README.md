@@ -25,7 +25,7 @@
 3. Setting remote for the local repo.
 	- tracking branches
 4. Cloning a remote repo and working with it.
-
+	- difference between clone and fork ?????????????????????
 5. Rewriting History
 
 6. pull requests
