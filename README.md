@@ -1,10 +1,34 @@
 # Git-VCS
-<div id="index" align="center">
+<div id="index">
 
 <!------------------------------index----------------------------------->
+<div align="center">
+<p>
+	
 ***index***
+</p>
+</div>
+	
+0. fundamentals
+	- git vocabulary
+	- git graph model
+	- git workflow
+	
+1. Installing git VCS
+2. Working with git locally
+	- working with git
+	- git status
+	- git log
+	- git diff
+	- tagging commits
+	- branching and merging
+3. Setting remote for the local repo.
+	- tracking branches
+4. Cloning a remote repo and working with it.
 
+5. Rewriting History
 
+6. pull requests
 
 
 <br>
@@ -174,6 +198,12 @@ _shows the graphical representation of all the commits made till now._
 
 <br/>
 
+---
+
+## <b>``>> git diff``</b> difference between two commits.
+??????????????
+
+<br/>
 
 ---
 
@@ -564,6 +594,7 @@ after that local branch run git pull, here those changes will be merged using **
 - **pull** - Fetches and merges commits locally.
 - **push** - Adds new Objects and references to the remote repository.
 
+<!-- git workflow -->
 
 ### fetch
 - retrieves new objects and references from the remote repository.
@@ -593,7 +624,6 @@ after that local branch run git pull, here those changes will be merged using **
 
 <br/>
 
-
 ### push
 - to push changes from local branch into remote branch, use ``>> git push``.
 - initially you have to use ``>> git push [-u] <repository> <branch>`` to set up default remote branch to push to. ``-u`` means (--set-upstream).
@@ -602,8 +632,26 @@ after that local branch run git pull, here those changes will be merged using **
 
 
 <br/>
+	
 ---
 
+# Rewriting History
+	
+### 1. Rebasing 
+
+### 2. Interactive Rebasing
+
+### Squash 
+
+<br/>
+	
+---
+	
+## pull Requests
 
 
+	
+<br/>
+	
+---
 
