@@ -638,6 +638,7 @@ after that local branch run git pull, here those changes will be merged using **
 # Rewriting History
 	
 ### 1. Rebasing 
+- git rebase turn a Recursive Merge into a Fast-Forward Merge
 
 ### 2. Interactive Rebasing
 
