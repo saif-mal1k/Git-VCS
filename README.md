@@ -635,6 +635,23 @@ after that local branch run git pull, here those changes will be merged using **
 	
 ---
 
+# amend resent commit
+You can use git commit --amend to make a modification to the last commit you made. This will alter the commit history of your project, so it is recommended that you don't use git commit --amend if you have already pushed your commits to the remote.
+
+You can also use git commit --amend to rewrite the most recent commit to include files in your staging area.
+
+<br/>
+	
+# Undoing Changes
+git revert creates a new commit with changes that are the opposite of the commit that is functionally being 'undone'
+
+<br/>
+	
+	
+
+
+<br/>
+	
 # Rewriting History
 	
 ### 1. Rebasing 
