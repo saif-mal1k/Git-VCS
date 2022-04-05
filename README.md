@@ -205,7 +205,7 @@ _shows the graphical representation of all the commits made till now._
 - the actual changes that have been made
 
 <div align="center"> 
-<a href="#git-diff"><img width="650px" src="images/git-diff.png" alt="image"></a>
+<a href="#git-diff"><img width="650px" src="images/git-diff-cmd.png" alt="image"></a>
 </div>
 	
 ```
