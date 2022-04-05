@@ -2,26 +2,24 @@
 <div id="index">
 
 <!------------------------------index----------------------------------->
-<div align="center">
-<p>
+
 	
-***index***
-</p>
-</div>
+ &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; ***index***
+
 	
 0. fundamentals
-	- git vocabulary
-	- git graph model
-	- git workflow
+	- [git vocabulary](#git-vocabulary)
+	- [git graph model](#git-graph-model)
+	- [git workflow](#git-workflow)
 	
 1. Installing git VCS
-2. Working with git locally
-	- working with git
-	- git status
-	- git log
-	- git diff
-	- tagging commits
-	- branching and merging
+2. Working with git
+	- [working with git locally](#working-with-git-locally)
+	- [git status](#git-status)
+	- [git log](#git-log)
+	- [git diff](#git-diff)
+	- [tagging commits](#tagging-commits)
+	- [branching and merging](#branching-and-merging)
 3. Setting remote for the local repo.
 	- tracking branches
 4. Cloning a remote repo and working with it.
@@ -100,7 +98,7 @@ _At its core, the Git version control system is a content addressable filesystem
 ---
 # working with git 
 
-## initialize git vcs in local repository:
+## <a name="working-with-git-locally"></a> initialize git vcs in local repository:
 ```
 >> git init 
 ```
@@ -135,7 +133,7 @@ _clones the project named awesome in directory named awesome._
 <br/>
 
 ---
-## Check status of files and folders in VCS
+## <a name="git-status"></a>Check status of files and folders in VCS
 ```
 >> git status
 ```
@@ -146,7 +144,7 @@ _The git status command will display a lot of information depending on the state
 <br/>
 
 ---
-## To view logs / commit history 
+## <a name="git-log"></a> To view logs / commit history 
 ```
 >> git log
 ```
@@ -200,8 +198,26 @@ _shows the graphical representation of all the commits made till now._
 
 ---
 
-## <b>``>> git diff``</b> difference between two commits.
-??????????????
+## <a name="git-diff"></a> <b>``>> git diff``</b> difference between two commits.
+***The git diff command can be used to see changes that have been made but haven't been committed, yet.***
+- the files that have been modified
+- the location of the lines that have been added/removed
+- the actual changes that have been made
+
+<div align="center"> 
+<a href="#git-diff"><img width="650px" src="images/git-diff.png" alt="image"></a>
+</div>
+	
+```
+>>git diff
+```
+> _compare and shows the difference between working-copy(modified & unstaged) and the copy in repo._
+
+```
+>>git diff --staged
+```
+> _compares and shows difference between staged file and copy in repo._
+
 
 <br/>
 
@@ -211,9 +227,9 @@ _shows the graphical representation of all the commits made till now._
 **tag is a reference/label attached to a specific commit.
 <br/>the tags are used to mark a time line in history, as v1.0,beta,v1.1 or some similiar names.**
 - they are of two types
-- Light Weight
+- ``Light Weight``
 	- simple reference to a commit.
-- Annotated Tag
+- ``Annotated Tag``
 	- A full git object that references a commit.
 	- Includes tag author name, tag date, tag message, the commit ID.
 
