@@ -570,6 +570,11 @@ after that local branch run git pull, here those changes will be merged using **
 **fig:** _there is only one remote branch ie. main and HEAD(tracking branch pointer) is pointing to that._
 </div>
 	
+- to make a local branch track changes from other than default branch
+<div align="center">
+<a href="#"><img src="https://user-images.githubusercontent.com/63545175/186409318-4a2905c9-4c42-4c55-8e13-cb7c18a85fc0.png" width="640px"></a>
+</div>
+	
 - to view commits on default remote tracking branch, use <b>``origin``</b> in command ``>> git log``<b>``origin``</b>``--oneline``.
 
 <div align="center">
