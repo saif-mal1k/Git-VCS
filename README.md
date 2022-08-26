@@ -4,6 +4,23 @@
 
 <img width="1440" alt="git   github (1920 × 1920 px)" src="https://user-images.githubusercontent.com/63545175/186906279-a0aa79df-144a-4db5-b8ed-3383805118cf.png">
 
+
+***after git installation, you'll need to check if Git is installed. In the terminal type:***
+```
+git --version
+```
+```
+git config --global user.name "your-name"
+```
+```
+git config --global user.email "your-email"
+```
+
+***To check if Git is already configured you can type:***
+```
+git config --list
+```
+
 ---
 
 
@@ -35,7 +52,7 @@
 3. Setting remote for the local repo.
 	- tracking branches
 4. Cloning a remote repo and working with it.
-	- difference between clone and fork ?????????????????????
+	- [difference between clone and fork](#difference-fork-clone)
 5. Rewriting History
 
 6. pull requests
@@ -141,6 +158,19 @@ _clones the project named awesome in directory named projectdir._
 ```
 _clones the project named awesome in directory named awesome._
 
+
+<br/>
+
+<details>
+<summary> 💡 <b>tip: <em>Difference between fork and clone</b></summary>
+<p>
+
+***Fork***  : when we want to make a replica of other github user's repository to our github profile, we fork their repository.
+
+***Clone*** : when we want to work in our local machine on a copy of forked repository( or any repository on our github profile) we clone it.
+
+</p>
+</details>
 
 <br/>
 
