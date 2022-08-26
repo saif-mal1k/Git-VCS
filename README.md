@@ -1,11 +1,23 @@
 # Git-VCS
+
+---
+
+<img width="1440" alt="git   github (1920 × 1920 px)" src="https://user-images.githubusercontent.com/63545175/186906279-a0aa79df-144a-4db5-b8ed-3383805118cf.png">
+
+---
+
+
+<br/>
+
+
+<br/>
+
+
+# &nbsp;  &nbsp;  &nbsp;  &nbsp;  index
+
 <div id="index">
 
 <!------------------------------index----------------------------------->
-
-	
- &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; ***index***
-
 	
 0. fundamentals
 	- [git vocabulary](#git-vocabulary)
