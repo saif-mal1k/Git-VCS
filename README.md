@@ -67,6 +67,19 @@ git config --list
 <br>
 
 ## Git Vocabulary
+
+***most used words***
+- **git**: an open source, distributed version-control system.
+- **GitHub**: a platform for hosting and collaborating on Git repositories.
+- **HEAD**: representing your current working directory, the HEAD pointer can be moved to different branches, tags, or commits when using git switch.
+- **commit**: a Git object, a snapshot of your entire repository compressed into a SHA.
+- **fork**: a replica of a repository on on your GitHub, and it is owned by a different user.
+- **clone**: a local version of a repository, including all commits and branches.
+- **remote**: a common repository on GitHub that all team members use to exchange their changes.
+- **pull request**: a place to compare and discuss the differences introduced on a branch with reviews, comments, integrated tests, and more.
+
+<br/>
+
 ***Git Objects:***
 - **commit object** - A small text file.
 - **Annotated tag** - A permanent reference to a specific commit.
