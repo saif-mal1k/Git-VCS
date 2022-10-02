@@ -153,6 +153,17 @@ _creates a new folder named myproject and initializes git vcs in it._
 
 <br/>
 
+
+## setting remote for local repository
+
+![image](https://user-images.githubusercontent.com/63545175/193444987-c08a7761-8940-4cba-84a6-b453a3d5971f.png)
+
+- first command set remote for local repository
+- second command selected the remote branch to push to
+
+
+<br/>
+
 ## Clone a remote repository( from github ) :
 ***syntax:*** ``>> git clone source destination``
 
