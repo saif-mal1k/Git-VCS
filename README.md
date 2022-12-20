@@ -2,7 +2,7 @@
 
 ---
 
-<img width="1440" alt="git   github (1920 × 1920 px)" src="https://user-images.githubusercontent.com/63545175/186906279-a0aa79df-144a-4db5-b8ed-3383805118cf.png">
+<img width="1440" alt="git   github (1920 × 1920 px)" src="https://user-images.githubusercontent.com/63545175/208663162-b124170c-a136-4daf-a293-2430ee9e55ab.png">
 
 
 ***after git installation, you'll need to check if Git is installed. In the terminal type:***
